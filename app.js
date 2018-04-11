@@ -5,16 +5,11 @@ const schema = require("./gql/schema");
 
 const app = express();
 
-let books = [
-  { name: "Name of the Wind", genre: "Fantasy", id: "1" },
-  { name: "The Final Empire", genre: "Fantasy", id: "2" },
-  { name: "The Long Earth", genre: "Sci-Fi", id: "3" }
-];
-
 app.use(
   "/graphql",
   graphqlHTTP({
-    schema
+    schema,
+    graphiql: true
   })
 );
 
